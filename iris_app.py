@@ -1,17 +1,29 @@
+
+import streamlit as st
+import pandas as pd
 import os
 from pathlib import Path
-import pandas as pd
-import streamlit as st
 
+# ✅ Must be the first Streamlit command
+st.set_page_config(page_title="Iris Dataset Explorer", page_icon="🌸")
+
+# (Optional) Debug after set_page_config
 st.write("Working directory:", os.getcwd())
 st.write("Files here:", os.listdir("."))
+
+# ✅ Correct path based on your repo structure (iris.csv is in root)
+df = pd.read_csv("iris.csv")
+
+st.title("Iris Dataset Explorer 🌸")
+st.dataframe(df)
 
 
 DATA_PATH = Path(__file__).parent / "data" / "iris.csv"
 st.write("Looking for file:", str(DATA_PATH))
 st.write("File exists?", DATA_PATH.exists())
 
-df = pd.read_csv('iris.csv')
+
+df = pd.read_csv("iris.csv")
 
 import plotly.express as px
 

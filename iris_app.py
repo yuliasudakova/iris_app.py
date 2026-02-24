@@ -6,11 +6,12 @@ import streamlit as st
 st.write("Working directory:", os.getcwd())
 st.write("Files here:", os.listdir("."))
 
+
 DATA_PATH = Path(__file__).parent / "data" / "iris.csv"
 st.write("Looking for file:", str(DATA_PATH))
 st.write("File exists?", DATA_PATH.exists())
 
-df = pd.read_csv(DATA_PATH)
+df = pd.read_csv('iris.csv')
 
 import plotly.express as px
 

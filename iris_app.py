@@ -1,5 +1,17 @@
-import streamlit as st
+import os
+from pathlib import Path
 import pandas as pd
+import streamlit as st
+
+st.write("Working directory:", os.getcwd())
+st.write("Files here:", os.listdir("."))
+
+DATA_PATH = Path(__file__).parent / "data" / "iris.csv"
+st.write("Looking for file:", str(DATA_PATH))
+st.write("File exists?", DATA_PATH.exists())
+
+df = pd.read_csv(DATA_PATH)
+
 import plotly.express as px
 
 # Set page title and icon

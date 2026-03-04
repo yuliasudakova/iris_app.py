@@ -8,10 +8,11 @@ st.set_page_config(page_title="Iris Dataset Explorer", page_icon="🌸", layout=
 # ✅ Load dataset (your repo has iris.csv in the ROOT)
 df = pd.read_csv("iris.csv")
 
+
 # Sidebar navigation
 page = st.sidebar.selectbox(
-    "Select a Page",
-    ["Home", "Data Overview", "Exploratory Data Analysis", "Extras"]
+    "Select a Page", 
+    ["Home", "Data Overview", "Exploratory Data Analysis", "Model Training and Evaluation", "Make Predictions!", "Extras"]
 )
 
 # -------------------------
